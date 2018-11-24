@@ -6,9 +6,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  color: white;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.app {
+  text-align: center;
+}
+.header {
+  padding: 40px;
+  
+}
+.order {
+  background-color: #008000;
+}
+.inventory {
+  background-color: #2fff40;
+}
+.adminPanel {
+  background-color: #daa520;
+  padding: 30px;
+  text-align: left;
 }
