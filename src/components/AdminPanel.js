@@ -15,11 +15,19 @@ class AdminPanel extends React.Component {
         }
     }
     handleChange = (event) => {
-        
-        let newBook = {
-            ...this.state.book,
-            [event.target.name]: event.target.value
+        let newBook;
+        if(event.target.name === "onStock") {
+            newBook = {
+                ...this.state.book,
+                [event.target.name]: event.target.checked
+            };
+        } else {
+            newBook = {
+                ...this.state.book,
+                [event.target.name]: event.target.value
+            }
         }
+      
         this.setState({book: newBook})
         
     }
