@@ -6,6 +6,19 @@ import Inventory from './components/Inventory';
 import Header from './components/Header';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      books: []
+    }
+  }
+  addNewBook = (book) => {
+    let newBooks = [ ...this.state.books ];
+    newBooks.push(book);
+    this.setState({
+      books: newBooks
+    })
+  }
   render() {
     return (
       <div className="app container">
@@ -14,8 +27,8 @@ class App extends Component {
        </div>
         <div className="row">
           <Order />
-          <Inventory />
-          <AdminPanel />
+          <Inventory books={this.state.books}/>
+          <AdminPanel books={this.state.books} addBook={this.addNewBook}/>
         </div>
       </div>
     );
