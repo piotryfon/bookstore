@@ -9,7 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      books: []
+      books: [],
+      order: []
     }
   }
   addNewBook = (book) => {
@@ -19,6 +20,12 @@ class App extends Component {
       books: newBooks
     })
   }
+  addToOrder = (book) => {
+    this.setState({order: [...this.state.order, book]})
+  }
+  removeFromOrder = (title) => {
+    this.setState({order: this.state.order.filter(book => title !== book.name)})
+  }
   render() {
     return (
       <div className="app container">
@@ -26,8 +33,8 @@ class App extends Component {
         <Header />
        </div>
         <div className="row">
-          <Order />
-          <Inventory books={this.state.books}/>
+          <Order order={this.state.order} removeFromOrder={this.removeFromOrder}/>
+          <Inventory books={this.state.books} addToOrder={this.addToOrder}/>
           <AdminPanel books={this.state.books} addBook={this.addNewBook}/>
         </div>
       </div>
