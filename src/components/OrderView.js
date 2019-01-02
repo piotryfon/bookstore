@@ -1,9 +1,9 @@
 import React from 'react';
 
-class OrderViev extends React.Component {
+class OrderView extends React.Component {
     render() {
         return (
-            <div>
+            <div className="orderView">
                 <b>{this.props.book.name}</b><br/>
                 <button className="btn btn-danger" onClick={() => this.props.removeFromOrder(this.props.book.name)}>Remove</button>
                 <hr/>
@@ -11,4 +11,4 @@ class OrderViev extends React.Component {
         )
     }
 }
-export default OrderViev;
+export default OrderView;

@@ -1,9 +1,9 @@
 import React from 'react';
-import OrderViev from './OrderViev';
+import OrderView from './OrderView';
 class Order extends React.Component {
     
     render() {
-        const orderedBooks = this.props.order.map(order => <OrderViev book={order} removeFromOrder={this.props.removeFromOrder}/>)
+        const orderedBooks = this.props.order.map(order => <OrderView book={order} removeFromOrder={this.props.removeFromOrder}/>)
         return (
             <div className="order col-md-4">
             <h2>Orders:</h2>

@@ -9,12 +9,14 @@ configure({adapter: new Adapter()});
 describe('Inventory tests', () => {
   it('Inventory renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Inventory />, div);
+    const books = [];
+    ReactDOM.render(<Inventory books={books}/>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('Snapshot matches', () => {
-    const wrapper = shallow(<Inventory />);
+    const books = [];
+    const wrapper = shallow(<Inventory books={books}/>);
     expect(wrapper).toMatchSnapshot();
   });
 })
