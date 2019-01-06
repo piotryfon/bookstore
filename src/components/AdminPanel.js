@@ -37,8 +37,6 @@ class AdminPanel extends React.Component {
    
         let newBook = { ...this.state.book };
 
-        //this.props.addBook(newBook);
-      
         this.setState({
             books: [...this.state.books, newBook],
             book: {
@@ -64,7 +62,7 @@ class AdminPanel extends React.Component {
     render() {
       
         return (
-            <div className="adminPanel col-md-4">
+            <div className="adminPanel col-md-4 offset-md-4">
                <form onSubmit={this.addNewBook}>
                    <div className="form-group">
                     <input type="text" placeholder="Book name" id="bookName" name="name" className="form-control" 
