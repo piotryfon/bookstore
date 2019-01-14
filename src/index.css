@@ -31,3 +31,13 @@ code {
   padding: 30px;
   text-align: left;
 }
+.book-view {
+  border: 1px solid #fff;
+  margin: 10px 0;
+  padding: 15px;
+}
+.orderView {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}

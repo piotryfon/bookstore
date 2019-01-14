@@ -26,7 +26,7 @@ class Inventory extends React.Component {
            
         return (
             <div className="inventory col-md-6">
-            <h2>Book List:</h2>
+            <h2>Bookstore inventory:</h2>
                { bookListing } 
             </div>
         )

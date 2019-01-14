@@ -6,7 +6,7 @@ class Order extends React.Component {
         const orderedBooks = this.props.order.map(order => <OrderView book={order} removeFromOrder={this.props.removeFromOrder}/>)
         return (
             <div className="order col-md-6">
-            <h2>Orders:</h2>
+            <h2>Your order:</h2>
                {orderedBooks}
             </div>
         )
