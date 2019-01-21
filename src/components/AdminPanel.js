@@ -58,6 +58,9 @@ class AdminPanel extends React.Component {
     }
 
     componentDidMount() {
+        if(localStorage.getItem("loggedIn")) {
+            this.setState({loggedIn: localStorage.getItem("loggedIn")})
+        }
         this.ref = fbase.syncState('bookstore/books',{
             context: this,
             state: 'books'
@@ -70,7 +73,8 @@ class AdminPanel extends React.Component {
         event.preventDefault();
         firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then( ()=> {
-                this.setState({loggedIn: true})
+                this.setState({loggedIn: true});
+                localStorage.setItem("loggedIn", true);
             })
             .catch( ()=> {
                 console.log("Unable to authenticate");
